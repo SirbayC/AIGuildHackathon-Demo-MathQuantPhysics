@@ -7,8 +7,8 @@ from typing import Any, Dict, Optional
 from openai import OpenAI
 from pydantic import ValidationError
 
-from schemas import AccessibilityReviewResponse
-from utils import (
+from a11y_bot.schemas import AccessibilityReviewResponse
+from a11y_bot.utils import (
     ensure_score_breakdown,
     normalize_issue_ids,
     parse_markdown_structure,
