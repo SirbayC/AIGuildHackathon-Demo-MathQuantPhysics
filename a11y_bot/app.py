@@ -4,7 +4,7 @@ import json
 
 import streamlit as st
 
-from reviewer import build_professor_report, review_markdown_accessibility
+from a11y_bot.reviewer import build_professor_report, review_markdown_accessibility
 
 DEFAULT_MODEL = "gpt-4o-mini"
 
