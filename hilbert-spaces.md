@@ -25,6 +25,8 @@ in a *Hilbert space*.
 As is customary in quantum physics and quantum algorithms, we use
 *bra-ket notation* for vectors in Hilbert spaces.
 
+text change
+
 :::{prf:definition} Vector space
 
 A (real or complex) *vector space* consists of
