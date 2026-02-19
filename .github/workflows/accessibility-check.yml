@@ -4,6 +4,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  pull-requests: write
+  contents: read
+
 jobs:
   analyze-diff:
     runs-on: ubuntu-latest
@@ -21,8 +25,17 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Use the GitHub CLI to get the diff for this specific PR and save it to a file
         run: |
-          gh pr diff ${{ github.event.pull_request.number }} --color=never > pr.diff
+          gh pr diff ${{ github.event.pull_request.number }} --color=never > ./a11y_bot/pr.diff
 
       - name: Pass Diff to Python Script
         run: |
-          python check_diff.py pr.diff
+          python ./a11y_bot/check_diff.py ./a11y_bot/pr.diff
+
+      - name: Post Comment to PR
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f report.md ]; then
+            gh pr comment ${{ github.event.pull_request.number }} --body-file ./a11y_bot/report.md
+          fi
