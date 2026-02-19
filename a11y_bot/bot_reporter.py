@@ -5,8 +5,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Optional
 
-from reviewer import review_markdown_accessibility
-from schemas import AccessibilityReviewResponse
+from a11y_bot.reviewer import review_markdown_accessibility
+from a11y_bot.schemas import AccessibilityReviewResponse
 
 
 def generate_accessibility_pr_report(
