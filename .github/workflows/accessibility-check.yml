@@ -43,6 +43,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f report.md ]; then
-            gh pr comment ${{ github.event.pull_request.number }} --body-file ./a11y_bot/report.md
-          fi
+          gh pr comment ${{ github.event.pull_request.number }} --body-file ./a11y_bot/report.md
