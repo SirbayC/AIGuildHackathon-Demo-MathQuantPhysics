@@ -10,6 +10,8 @@ kernelspec:
     name: python3
 ---
 
+ADDING SOME TEXT
+
 # Diagonalisation
 
 A very common example of a basis transformation is *diagonalisation*
