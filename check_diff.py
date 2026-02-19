@@ -3,14 +3,13 @@ import sys
 def parse_diff(diff_content):
     """Parses a unified diff and returns a dictionary of added lines per file."""
     changed_files = {}
-
+    current_file = None
     lines = diff_content.split('\n')
 
     print(diff_content)
     print("-"*50)
     
     for line in lines:
-        current_file = None
 
         # Detect which file we are currently looking at
         if line.startswith('+++ b/'):
