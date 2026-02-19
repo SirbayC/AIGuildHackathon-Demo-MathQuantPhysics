@@ -1,13 +1,13 @@
-def generate_markdown_report(changes:dict[list[str]]) -> str:
+def generate_markdown_report(changes:dict[str, str]) -> str:
     output_file = "report.md"
 
     report_lines = ["Test line"]
 
-    for file, lines in changes.items():
+    for file, change in changes.items():
         # 'lines' is the list of strings for this specific file
-        for line in lines:
-            # Now 'line' is a single string
-            report_lines.append(f"**{file}**: {line}")
+        report_lines.append("\nNEW CHANGE\n")
+        report_lines.append(file)
+        report_lines.append(change)
 
     # Write the report to the file
     with open(output_file, "w", encoding="utf-8") as f:

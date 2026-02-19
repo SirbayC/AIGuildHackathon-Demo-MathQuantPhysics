@@ -15,7 +15,7 @@ def parse_diff(diff_content):
             current_file = line.replace('+++ b/', '')
             # We only care about markdown files for accessibility checks
             if current_file.endswith('.md'):
-                changed_files[current_file] = []
+                changed_files[current_file] = ""
             else:
                 current_file = None # Ignore non-markdown files
                 
@@ -23,8 +23,9 @@ def parse_diff(diff_content):
         elif current_file and line.startswith('+') and not line.startswith('+++'):
             # Remove the leading '+' to get the actual content
             actual_content = line[1:]
+
             if actual_content.strip(): 
-                changed_files[current_file].append(actual_content)
+                changed_files[current_file] = changed_files[current_file] + "\n" + actual_content
 
     return changed_files
 
@@ -32,20 +33,9 @@ def analyze_diff(diff_file_path):
     with open(diff_file_path, 'r', encoding='utf-8') as file:
         diff_content = file.read()
 
-    # Parse the diff
     parsed_changes = parse_diff(diff_content)
-    
-    # Print the results
-    print("--- PARSED DIFF RESULTS ---")
-    for filename, added_lines in parsed_changes.items():
-        print(f"\nFile: {filename}")
-        print(f"Total new lines added: {len(added_lines)}")
-        
-        # Now we can run our accessibility checks on these specific lines!
-        for i, line in enumerate(added_lines):
-            print(f"  Line {i+1}: {line}")
 
-    print("--- Calling thing ---")
+    print("--- Calling analyzer ---")
     saved_file = generate_markdown_report(parsed_changes)
     print(saved_file)
 
