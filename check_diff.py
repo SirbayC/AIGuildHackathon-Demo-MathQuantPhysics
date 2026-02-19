@@ -23,7 +23,8 @@ def parse_diff(diff_content):
         elif current_file and line.startswith('+') and not line.startswith('+++'):
             # Remove the leading '+' to get the actual content
             actual_content = line[1:]
-            changed_files[current_file].append(actual_content)
+            if actual_content.strip(): 
+                changed_files[current_file].append(actual_content)
 
     return changed_files
 
