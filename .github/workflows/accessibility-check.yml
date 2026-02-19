@@ -26,3 +26,12 @@ jobs:
       - name: Pass Diff to Python Script
         run: |
           python check_diff.py pr.diff
+
+      - name: Post Comment to PR
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f report.md ]; then
+            gh pr comment ${{ github.event.pull_request.number }} --body-file report.md
+          fi

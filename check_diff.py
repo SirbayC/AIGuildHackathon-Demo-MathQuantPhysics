@@ -1,13 +1,12 @@
 import sys
 
+from reporter import generate_markdown_report
+
 def parse_diff(diff_content):
     """Parses a unified diff and returns a dictionary of added lines per file."""
     changed_files = {}
     current_file = None
     lines = diff_content.split('\n')
-
-    print(diff_content)
-    print("-"*50)
     
     for line in lines:
 
@@ -44,6 +43,10 @@ def analyze_diff(diff_file_path):
         # Now we can run our accessibility checks on these specific lines!
         for i, line in enumerate(added_lines):
             print(f"  Line {i+1}: {line}")
+
+    print("--- Calling thing ---")
+    saved_file = generate_markdown_report(parsed_changes)
+    print(saved_file)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
