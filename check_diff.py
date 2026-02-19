@@ -1,9 +1,11 @@
 import sys
+import re
 
 def parse_diff(diff_content):
-    """Parses a unified diff and returns a dictionary of added lines per file."""
+    """Parses a unified diff and returns a dictionary of added lines per file with line numbers."""
     changed_files = {}
     current_file = None
+    current_line_number = None
     lines = diff_content.split('\n')
     
     for line in lines:
@@ -16,12 +18,32 @@ def parse_diff(diff_content):
                 changed_files[current_file] = []
             else:
                 current_file = None # Ignore non-markdown files
-                
+        
+        # Parse the @@ line to get starting line numbers
+        elif current_file and line.startswith('@@'):
+            # Extract line numbers from @@ -start,count +start,count @@
+            match = re.search(r'\+(\d+)', line)
+            if match:
+                current_line_number = int(match.group(1))
+            
         # If we are inside a markdown file and the line was ADDED
         elif current_file and line.startswith('+') and not line.startswith('+++'):
             # Remove the leading '+' to get the actual content
             actual_content = line[1:]
-            changed_files[current_file].append(actual_content)
+            changed_files[current_file].append({
+                'line_number': current_line_number,
+                'content': actual_content
+            })
+            current_line_number += 1
+        
+        # Track line numbers for context lines (unchanged lines)
+        elif current_file and current_line_number is not None:
+            if line.startswith('-') and not line.startswith('---'):
+                # Deleted line, don't increment
+                pass
+            elif line and not line.startswith('+') and not line.startswith('-') and not line.startswith('\\'):
+                # Context line (unchanged), increment line number
+                current_line_number += 1
 
     return changed_files
 
@@ -39,8 +61,10 @@ def analyze_diff(diff_file_path):
         print(f"Total new lines added: {len(added_lines)}")
         
         # Now we can run our accessibility checks on these specific lines!
-        for i, line in enumerate(added_lines):
-            print(f"  Line {i+1}: {line}")
+        for item in added_lines:
+            line_num = item['line_number']
+            content = item['content']
+            print(f"  Line {line_num}: {content}")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
