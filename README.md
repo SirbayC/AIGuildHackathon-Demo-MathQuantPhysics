@@ -7,6 +7,8 @@ Created as part of [TU Delft First AI Guild Hackathon “AI-in-Practice"](https:
 Team members:
 - [Cosmin Andrei Vasilescu](https://github.com/SirbayC)
 
+Example usage is available in [PR](https://github.com/SirbayC/AIGuildHackathon-Demo-MathQuantPhysics/pull/8).
+
 ---
 
 ## 🚀 Features
