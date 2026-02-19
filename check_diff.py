@@ -1,21 +1,47 @@
 import sys
 
+def parse_diff(diff_content):
+    """Parses a unified diff and returns a dictionary of added lines per file."""
+    changed_files = {}
+
+    lines = diff_content.split('\n')
+    
+    for line in lines:
+        current_file = None
+
+        # Detect which file we are currently looking at
+        if line.startswith('+++ b/'):
+            current_file = line.replace('+++ b/', '')
+            # We only care about markdown files for accessibility checks
+            if current_file.endswith('.md'):
+                changed_files[current_file] = []
+            else:
+                current_file = None # Ignore non-markdown files
+                
+        # If we are inside a markdown file and the line was ADDED
+        elif current_file and line.startswith('+') and not line.startswith('+++'):
+            # Remove the leading '+' to get the actual content
+            actual_content = line[1:]
+            changed_files[current_file].append(actual_content)
+
+    return changed_files
+
 def analyze_diff(diff_file_path):
-    # Open and read the diff file
-    with open(diff_file_path, 'r') as file:
+    with open(diff_file_path, 'r', encoding='utf-8') as file:
         diff_content = file.read()
 
-    print("--- SUCCESSFULLY LOADED DIFF INTO PYTHON ---")
-    print(f"Diff length: {len(diff_content)} characters")
+    # Parse the diff
+    parsed_changes = parse_diff(diff_content)
     
-    # POC: Just print the first 15 lines of the diff to prove we have it
-    lines = diff_content.split('\n')
-    for line in lines:
-        print(line)
+    # Print the results
+    print("--- PARSED DIFF RESULTS ---")
+    for filename, added_lines in parsed_changes.items():
+        print(f"\nFile: {filename}")
+        print(f"Total new lines added: {len(added_lines)}")
         
-    print("--------------------------------------------")
-    
-    # Here is where you will eventually add your logic to score the accessibility!
+        # Now we can run our accessibility checks on these specific lines!
+        for i, line in enumerate(added_lines):
+            print(f"  Line {i+1}: {line}")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
