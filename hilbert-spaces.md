@@ -413,3 +413,10 @@ is the one where all $c_i$ are equal to $0$.
 Consider a linear subspace $W$ of a Hilbert space $\HH$.  Show that
 the orthogonal complement $W^\perp$ is again a linear subspace.
 :::
+
+
+## Login Success
+
+![ ](https://example.com/success-icon.png)
+
+Click the green button to continue.
