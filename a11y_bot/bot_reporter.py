@@ -31,6 +31,7 @@ def generate_accessibility_pr_report(
         None. The report is always written to report.md in output_dir.
     """
     output_path = Path(output_dir).resolve() / "report.md"
+    print(output_path)
 
     lines = [
         "# Accessibility PR Review",
