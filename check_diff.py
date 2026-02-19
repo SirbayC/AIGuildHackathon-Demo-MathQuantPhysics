@@ -5,6 +5,9 @@ def parse_diff(diff_content):
     changed_files = {}
 
     lines = diff_content.split('\n')
+
+    print(diff_content)
+    print("-"*50)
     
     for line in lines:
         current_file = None
