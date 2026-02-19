@@ -29,6 +29,8 @@ $$
 for arbitrary real numbers $t$ are needed to decompose arbitrary
 functions $f$ as above.
 
+Click on the green button to navigate
+
 ## Definition and basic properties
 
 :::{prf:definition} Fourier transform
