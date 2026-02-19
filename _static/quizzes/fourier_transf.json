@@ -1,0 +1,27 @@
+[
+    {
+        "question": "Let $a>0$.  What is the Fourier transform of the function $f(x)=\\begin{cases}e^{-ax}& \\text{if }x\\ge0,\\\\ 0& \\text{if }x<0?\\end{cases}$",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "It does not exist.",
+                "correct": false,
+                "feedback": "Are you sure it does not converge?"
+            },
+            {
+                "answer": "$-\\frac{1}{a+2\\pi i y}$",
+                "correct": true
+            },
+            {
+                "answer": "$\\frac{1}{a-2\\pi i y}$",
+                "correct": false,
+                "feedback": "Check the signs in your calculations."
+            },
+            {
+                "answer": "$\\frac{1}{2\\pi i y}$",
+                "correct": false,
+                "feedback": "Did you simplify the expression correctly?"
+            }
+        ]
+    }
+]

@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Suppose $X_1, ..., X_n$ are independent samples from an unknown distribution with finite mean and variance. Which of the following statements about $\\hat{\\sigma}^2$ is incorrect?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$\\hat{\\sigma}^2$ measures the spread of the sample around the sample mean.",
+                "correct": false,
+                "feedback": "This is true. The sample variance quantifies the spread of the data around the sample mean."
+            },
+            {
+                "answer": "$\\hat{\\sigma}^2$ depends on the value of $\\hat{\\mu}$.",
+                "correct": false,
+                "feedback": "This is true. The sample variance calculation explicitly uses $\\hat{\\mu}$, so it depends on the sample mean."
+            },
+            {
+                "answer": "$\\hat{\\sigma}^2$ can take on negative values if the sample values are small.",
+                "correct": true,
+                "feedback": "Correct! This is false, since variances are always non-negative, as they are calculated by summing squared deviations."
+            },
+            {
+                "answer": "$\\hat{\\sigma}^2$ is computed using all the sample data points.",
+                "correct": false,
+                "feedback": "This is true. Every sample data point $X_i$ is included in the computation of $\\hat{\\sigma}^2$."
+            }
+        ]
+    }
+]

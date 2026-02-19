@@ -1,0 +1,28 @@
+[
+    {
+        "question": "What is the Taylor series of $\\arctan(x)$ around $x=0$?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$\\sum_{n=0}^{\\infty} {(-1)}^n \\frac{x^{2n+1}}{2n+1}$",
+                "correct": true,
+                "feedback": "Correct! In case you didn't do it, try calculating the series of $\\arctan(x)$ by integrating over the one for $\\frac{1}{1+x^2}$."
+            },
+            {
+                "answer": "$\\sum_{n=0}^{\\infty} {(-1)}^n \\frac{x^{2n+1}}{(2n+1)!}$",
+                "correct": false,
+                "feedback": "Note the factorial in the denominator."
+            },
+            {
+                "answer": "$\\sum_{n=0}^{\\infty} \\frac{x^{2n+1}}{2n+1}$",
+                "correct": false,
+                "feedback": "Rethink about the sign pattern of the derivatives."
+            },
+            {
+                "answer": "$\\sum_{n=0}^{\\infty} {(-1)}^n \\frac{x^{2n}}{2n}$",
+                "correct": false,
+                "feedback": "Does the order of each term of the series seem correct?"
+            }
+        ]
+    }
+]

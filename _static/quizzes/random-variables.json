@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Let $X$ be a continous random variable with a function $\\phi_X (x)$, which is either a PDF or a CDF. Which of the following can hold if $\\phi_X$ is a CDF, but not if $\\phi_X$ is a PDF?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$\\phi_X (k) > 1$ for some $k \\in \\mathbb{R}$",
+                "correct": false,
+                "feedback": "Try again. The values of a CDF cannot exceed 1."
+            },
+            {
+                "answer": "$\\phi_X (k) < 0$ for some $k \\in \\mathbb{R}$",
+                "correct": false,
+                "feedback": "Try again. Neither a PDF nor a CDF can take negative values."
+            },
+            {
+                "answer": "$\\int_{- \\infty}^{k} \\phi_X (x) dx > 1$ for some $k \\in \\mathbb{R}$",
+                "correct": true,
+                "feedback": "Correct! If $\\phi_X$ is a PDF, then the integral is the corresponding CDF, which cannot exceed 1. However, there is no such restriction for a CDF."
+            },
+            {
+                "answer": "$\\phi_X ' (k) < 0$ for some $k \\in \\mathbb{R}$",
+                "correct": false,
+                "feedback": "Try again. A PDF can be decreasing, but a CDF cannot."
+            }
+        ]
+    }
+]

@@ -1,0 +1,11 @@
+# work around https://sourceforge.net/p/docutils/patches/195/
+docutils >= 0.15, != 0.18.*, != 0.19.*
+jupyter-book
+jupyterquiz
+matplotlib
+numpy
+# interactive plots don't display with plotly >= 6.0.0rc0
+plotly <= 5.24.1
+sphinx_exercise
+sphinx_proof
+sympy

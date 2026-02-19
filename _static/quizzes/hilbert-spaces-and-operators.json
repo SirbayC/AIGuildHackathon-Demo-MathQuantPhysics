@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Consider the operator $T = \\begin{pmatrix} e^{i \\theta} & 0 \\\\ 0 & e^{i \\phi} \\end{pmatrix}$ for $0 \\leq \\theta, \\phi \\leq 2 \\pi$ on the Hilbert space $\\mathbb{C}^2$. Let $(\\ket{e_1},\\ket{e_2})$ be an orthonormal basis for $\\mathbb{C}^2$. What happens when we apply the operator to these basis vectors, and then take their Hermitian inner product?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$\\langle T e_1\\mid T e_2 \\rangle < 0$",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "$\\langle T e_1\\mid T e_2 \\rangle > 0$",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "$\\langle T e_1\\mid T e_2 \\rangle$ is a complex number that may be non-real",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "$\\langle T e_1\\mid T e_2 \\rangle = 0$",
+                "correct": true,
+                "feedback": "Correct! $T$ is a unitary operator, which means that it preserves Hermitian inner products. In particular, the orthogonality of the basis vectors is preserved: $\\langle T e_1\\mid T e_2 \\rangle = \\langle e_1\\mid e_2 \\rangle = 0$."
+            }
+        ]
+    }
+]

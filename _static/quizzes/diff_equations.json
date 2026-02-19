@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Which of the following is a second-order linear differential equation?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$y'' + y = 0$",
+                "correct": true,
+                "feedback": "Correct: it involves the second derivative $y''$ and the dependent variable $y$ appears linearly."
+            },
+            {
+                "answer": "$y'' + y' + 1 = 0$",
+                "correct": false,
+                "feedback": "Second-order but not linear because of the term $1$."
+            },
+            {
+                "answer": "$y' + y^2 = 0$",
+                "correct": false,
+                "feedback": "First-order and nonlinear because of the term $y^2$."
+            },
+            {
+                "answer": "$y'' + \\sin{(y)} = 0$",
+                "correct": false,
+                "feedback": "Second-order but nonlinear because of the term $\\sin{(y)}$."
+            }
+        ]
+    }
+]

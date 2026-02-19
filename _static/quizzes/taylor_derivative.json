@@ -1,0 +1,27 @@
+[
+    {
+        "question": "What is the Taylor series of $\\frac{1}{1+x^2}$ around $x=0$?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$\\sum_{n=0}^{\\infty} {(-1)}^n x^{2n}$",
+                "correct": true
+            },
+            {
+                "answer": "$\\sum_{n=0}^{\\infty} x^{2n}$",
+                "correct": false,
+                "feedback": "Rethink about the sign pattern of the derivatives."
+            },
+            {
+                "answer": "$\\sum_{n=0}^{\\infty} {(-1)}^n \\frac{x^{2n}}{n!}$",
+                "correct": false,
+                "feedback": "Should the factorial factor be included here?"
+            },
+            {
+                "answer": "$\\sum_{n=0}^{\\infty} \\frac{x^{2n}}{(2n)!}$",
+                "correct": false,
+                "feedback": "Should the factorial factor be included here?"
+            }
+        ]
+    }
+]

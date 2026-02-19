@@ -1,0 +1,31 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+defaults:
+  numbered: True
+parts:
+  - caption: Analysis
+    chapters:
+    - file: taylor-series
+    - file: fourier-series
+    - file: fourier-transforms
+    - file: differential-equations
+  - caption: Linear algebra
+    chapters:
+    - file: matrix-operations
+    - file: basis-transformations
+    - file: diagonalisation
+    - file: hilbert-spaces
+    - file: operators
+    - file: tensor-products
+  - caption: Probability and statistics
+    chapters:
+    - file: random-variables
+    - file: basic-probability-distributions
+    - file: central-limit-theorem
+    - file: experiments-and-estimators
+  - caption: Appendix
+    chapters:
+    - file: basic-matrix-arithmetic

@@ -1,0 +1,28 @@
+[
+    {
+        "question": "Let $X_1$, ..., $X_N$ be $N$ random variables, each having mean $\\mu$ and standard deviation $\\sigma$. The $X_i$ with even $i$ are perfectly correlated with one another, while the $X_i$ with odd $i$ are perfectly anti-correlated with those for even $i$. Define the average $\\overline{X}$ as: \\[\\overline{X} = \\frac{1}{N} \\sum_{i=1}^{N} X_i.\\] What is the standard deviation $\\sigma_\\overline{X}$ of $\\overline{X}$?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "$\\sigma_\\overline{X} = 0$ always",
+                "correct": false,
+                "feedback": "It seems you may have only looked at the case where $N$ is even."
+            },
+            {
+                "answer": "$\\sigma_\\overline{X} = 0$ for even $N$ and $\\sigma_\\overline{X} = \\sigma / N$ for odd $N$",
+                "correct": true,
+                "feedback": "Correct!"
+            },
+            {
+                "answer": "$\\sigma_\\overline{X} = \\sigma / \\sqrt{N}$ always",
+                "correct": false,
+                "feedback": "Incorrect, in general. Notice that the random variables $X_i$ are not independent."
+            },
+            {
+                "answer": "$\\sigma_\\overline{X} = 0$ for even $N$ and $\\sigma_\\overline{X} = \\sigma / \\sqrt{N}$ for odd $N$",
+                "correct": false,
+                "feedback": "It seems you may have made a small miscalculation for odd $N$."
+            }
+        ]
+    }
+]
