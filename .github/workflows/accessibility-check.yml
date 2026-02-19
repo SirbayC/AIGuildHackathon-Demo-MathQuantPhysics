@@ -21,7 +21,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Use the GitHub CLI to get the diff for this specific PR and save it to a file
         run: |
-          gh pr diff ${{ github.event.pull_request.number }} > pr.diff
+          gh pr diff ${{ github.event.pull_request.number }} --color=never > pr.diff
 
       - name: Pass Diff to Python Script
         run: |
