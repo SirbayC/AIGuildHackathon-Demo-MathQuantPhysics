@@ -9,7 +9,7 @@ Team members:
 - [David Gherguț](https://github.com/DavidGhergut)
 - [Bogdan Moiș](https://github.com/bogdanmois23)
 
-Example usage is available in [PR](https://github.com/SirbayC/AIGuildHackathon-Demo-MathQuantPhysics/pull/8).
+Example usage is available in [PR](https://github.com/SirbayC/AIGuildHackathon-Demo-MathQuantPhysics/pull/7).
 
 A web app that does the same accessibility reports for people that don't want GitHub integrations is available in this [repository](https://github.com/bogdanmois23/ai-hackaton-accessibility).
 
